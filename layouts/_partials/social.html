@@ -4,7 +4,8 @@
         <li>
             {{ if isset . "icon" }}
                 <a href="{{ .url | safeURL }}" {{ if .target }} target="{{ .target }}" {{ end }} {{ if .aria }} aria-label="{{ .aria }}" {{ else }} aria-hidden="true" {{ end }} title="{{ .name }}" {{ if .rel }} rel="{{ .rel }}"{{ end }}>
-                  {{ .icon }}
+                  {{ $iconstr := dict "name" .icon "vendor" .iconvendor }}
+                  {{partial "icon/icons" $iconstr  }}
                 </a>
             {{ else }}
                 <a href="{{ .url | safeURL }}" {{ if .target }} target="{{ .target }}" {{ if .aria }} aria-label="{{ .aria }}" {{ else }} aria-hidden="true" {{ end }} {{ end }} {{ if .rel }} rel="{{ .rel }}"{{ end }}>{{ .name }}</a>
