@@ -18,8 +18,8 @@
 }
 .indexHeader {
     font-size: 3em;
+    background-color: rgba(0, 0, 0, 0); /* Adjust darkness: 0 = transparent, 1 = fully black */
 }
-
 /* Avatar sizes (default is M) - XS, S, M, L, XL */
 .authorImageWrapper img.size-xs {
     height: 7rem;
