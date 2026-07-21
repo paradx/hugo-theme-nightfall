@@ -16,8 +16,11 @@
     }
     </style>
     {{ end }}
-    <body class="{{if site.Params.backgroundImage}} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{else}}"{{end}}>
-
+{{if site.Params.backgroundImage}}
+<body class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');"> 
+  {{else}}
+<body>
+{{end}}
     <div class="flexWrapper">
         {{ partial "header.html" . }}
 
