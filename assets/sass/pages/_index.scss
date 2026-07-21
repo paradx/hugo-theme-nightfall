@@ -1,22 +1,9 @@
-
 .indexWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: {{.Site.Params.backgroundImage }};
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
-.indexWrapper::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6); /* Adjust darkness: 0 = transparent, 1 = fully black */
-}
+
 .indexHeader {
     font-size: 3em;
     background-color: rgba(0, 0, 0, 0); /* Adjust darkness: 0 = transparent, 1 = fully black */

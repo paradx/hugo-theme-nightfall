@@ -8,6 +8,13 @@
 
     {{ partial "head.html" . }}
 
+    {{if isset .Site.Params "backgroundImage"}}
+    <style>
+body{background-image: url("{{ .Site.Param.backgroundImage }}");
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust darkness: 0 = transparent, 1 = fully black */
+}
+    </style>
+    {{ end }}
 </head>
 
 <body>
