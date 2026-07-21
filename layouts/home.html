@@ -9,24 +9,18 @@
     {{ partial "head.html" . }}
 
 </head>
-    {{if isset .Site.Params "backgroundImage"}}
-    <style>
-.indexWrapper {
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust darkness: 0 = transparent, 1 = fully black */
-    }
-    </style>
-    {{ end }}
-{{if site.Params.backgroundImage}}
-<body class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');"> 
-  {{else}}
 <body>
-{{end}}
     <div class="flexWrapper">
         {{ partial "header.html" . }}
 
         <div class="content vertical">
             <main class="main">
+
                 <div class="indexWrapper">
+                {{if site.Params.backgroundImage}}
+                  <div class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');"> 
+                    {{else}}
+                    {{ end }}
                     {{ if .Site.Params.author.avatarFirst }}
                         {{ partial "avatar.html" . }}
                     {{ end }}
@@ -40,6 +34,9 @@
                         {{ partial "social.html" . }}
                     {{ end }}
                 </div>
+                {{if site.Params.backgroundImage}}
+                </div>
+                {{ end }}
             </main>
         </div>
 
