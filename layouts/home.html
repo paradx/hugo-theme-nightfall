@@ -10,7 +10,7 @@
 
 </head>
 {{if site.Params.backgroundImage}}
-<body class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}'); "> 
+<body class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}'); background-color: rgba(0,0,0,0.4);"> 
 {{else}}
 <body>
 {{ end }}
@@ -18,7 +18,7 @@
       {{ partial "header.html" . }}
       <div class="content vertical">
         <main class="main">
-          <div class="indexWrapper" style="background-color: rgba(0,0,0,0.9);">
+          <div class="indexWrapper" style="background-color: rgba(0,0,0,0.6);">
             {{ if .Site.Params.author.avatarFirst }}
             {{ partial "avatar.html" . }}
             {{ end }}
