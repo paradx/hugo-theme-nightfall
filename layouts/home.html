@@ -9,43 +9,35 @@
     {{ partial "head.html" . }}
 
 </head>
+{{if site.Params.backgroundImage}}
+<body class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');
+             background-color: rgba(0,0,0,0.8);"> 
+{{else}}
 <body>
+{{ end }}
     <div class="flexWrapper">
-        {{ partial "header.html" . }}
-        
-       <div class="content vertical">
-       {{if site.Params.backgroundImage}}
-       <div class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');
-                      background-color: rgba(0,0,0,0.8);"> 
-       {{else}}
-       <!-- Nothing to see here -->
-       {{ end }}
-
-         <main class="main">
-           <div class="indexWrapper">
-             {{ if .Site.Params.author.avatarFirst }}
-             {{ partial "avatar.html" . }}
-             {{ end }}
-             <div>
-               <h1 class="indexHeader">{{ .Site.Params.author.name }}</h1>
-             </div>
-             {{ if not .Site.Params.author.avatarFirst }}
-             {{ partial "avatar.html" . }}
-             {{ end }}
-             {{ if isset .Site.Params "social" }}
-             {{ partial "social.html" . }}
-             {{ end }}
-           </div>
-         </main>
-       </div>
-
-       {{if site.Params.backgroundImage}}
-       </div>
-       {{ end }}
-
-       {{ partial "footer.html" . }}
+      {{ partial "header.html" . }}
+      <div class="content vertical">
+        <main class="main">
+          <div class="indexWrapper">
+            {{ if .Site.Params.author.avatarFirst }}
+            {{ partial "avatar.html" . }}
+            {{ end }}
+            <div>
+              <h1 class="indexHeader">{{ .Site.Params.author.name }}</h1>
+            </div>
+            {{ if not .Site.Params.author.avatarFirst }}
+            {{ partial "avatar.html" . }}
+            {{ end }}
+            {{ if isset .Site.Params "social" }}
+            {{ partial "social.html" . }}
+            {{ end }}
+          </div>
+        </main>
+      </div>
+      {{ partial "footer.html" . }}
     </div> <!-- flexWrapper -->
 
-</body>
+  </body>
 
 </html>
