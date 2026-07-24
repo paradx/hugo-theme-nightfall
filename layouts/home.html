@@ -14,16 +14,16 @@
         {{ partial "header.html" . }}
 
         <div class="content vertical">
-            <main class="main">
-                {{if site.Params.backgroundImage}}
-                <div class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');
-                              background-color: rgba(0,0,0,0.8);"> 
-                {{else}}
-                <!-- Nothing to see here -->
-                {{ end }}
 
+             {{if site.Params.backgroundImage}}
+             <div class="background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');
+                      background-color: rgba(0,0,0,0.8);"> 
+            {{else}}
+            <!-- Nothing to see here -->
+            {{ end }}
+            <main class="main">
                 <div class="indexWrapper">
-                                    {{ if .Site.Params.author.avatarFirst }}
+                    {{ if .Site.Params.author.avatarFirst }}
                         {{ partial "avatar.html" . }}
                     {{ end }}
                     <div>
@@ -36,10 +36,10 @@
                         {{ partial "social.html" . }}
                     {{ end }}
                 </div>
-                {{if site.Params.backgroundImage}}
-                </div>
-                {{ end }}
             </main>
+            {{if site.Params.backgroundImage}}
+             </div>
+            {{ end }}
         </div>
 
 
